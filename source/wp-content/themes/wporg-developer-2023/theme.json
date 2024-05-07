@@ -42,6 +42,9 @@
 			]
 		},
 		"custom": {
+			"alignment": {
+				"aligned-max-width": "100%"
+			},
 			"color": {
 				"blue-60": "#135e96",
 				"blue-60-alpha-10": "#135e9619",
