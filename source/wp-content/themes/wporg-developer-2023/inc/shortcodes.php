@@ -58,6 +58,17 @@ add_shortcode(
 );
 
 /**
+ * Get the title of the article.
+ */
+add_shortcode(
+	'article_title',
+	function() {
+		global $post;
+		return get_the_title();
+	}
+);
+
+/**
  * Only display the 'Last updated' if the modified date is later than the publishing date.
  */
 add_shortcode(
