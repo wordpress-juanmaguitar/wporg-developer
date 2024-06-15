@@ -1,0 +1,28 @@
+{
+	"name": "wporg-locale-switcher",
+	"version": "1.0.0",
+	"description": "",
+	"author": "WordPress.org",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"start": "wp-scripts start",
+		"build": "wp-scripts build --webpack--devtool",
+		"format:js": "wp-scripts format-js js",
+		"lint:css": "wp-scripts lint-style './**/*.{css,scss}'",
+		"lint:js": "wp-scripts lint-js src",
+		"packages-update": "wp-scripts packages-update"
+	},
+	"dependencies": {
+		"@wordpress/components": "^21.3.0",
+		"@wordpress/element": "^4.18.0",
+		"@wordpress/i18n": "^4.20.0",
+		"@wordpress/url": "^3.21.0"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "27.2.0"
+	},
+	"stylelint": {
+		"extends": "../../../../.stylelintrc"
+	}
+}
