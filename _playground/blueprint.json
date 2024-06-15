@@ -63,102 +63,44 @@
             }
         },
         {
-            "step": "writeFile",
-            "path": "/wordpress/wp-content/mu-plugins/rewrite.php",
-            "data": "<?php /* Use pretty permalinks */ add_action( 'after_setup_theme', function() { global $wp_rewrite; $wp_rewrite->set_permalink_structure('/%postname%/'); $wp_rewrite->flush_rules(); } );"
-        },
-        {
-            "step": "setSiteOptions",
-            "options": {
-                "blogname": "Stylish Press",
-                "woocommerce_store_city": "Wrocław",
-                "woocommerce_store_address": "Aleje Jerozolimskie 14",
-                "woocommerce_store_postcode": "00-153",
-                "woocommerce_default_country": "Poland",
-                "woocommerce_onboarding_profile": {
-                    "skipped": true
-                },
-                "woocommerce_currency": "PLN",
-                "woocommerce_weight_unit": "oz",
-                "woocommerce_dimension_unit": "in",
-                "woocommerce_allow_tracking": "no",
-                "woocommerce_cheque_settings": {
-                    "enabled": "yes"
-                }
-            }
-        },
-        {
             "step": "installPlugin",
             "pluginZipFile": {
-                "resource": "wordpress.org/plugins",
-                "slug": "woocommerce"
+                "resource": "url",
+                "url": "https://github-proxy.com/proxy/?repo=wordpress-juanmaguitar/wporg-developer&branch=trunk&directory=source/wp-content/plugins/handbook/"
             },
             "options": {
                 "activate": true
             }
         },
         {
-            "step": "importWxr",
-            "file": {
+            "step": "installPlugin",
+            "pluginZipFile": {
                 "resource": "url",
-                "url": "https://raw.githubusercontent.com/wordpress/blueprints/trunk/blueprints/stylish-press/woo-products.wxr"
+                "url": "https://github-proxy.com/proxy/?repo=wordpress-juanmaguitar/wporg-developer&branch=trunk&directory=source/wp-content/plugins/wporg-markdown/"
+            },
+            "options": {
+                "activate": true
             }
         },
         {
-            "step": "importWxr",
-            "file": {
+            "step": "installTheme",
+            "themeZipFile": {
                 "resource": "url",
-                "url": "https://raw.githubusercontent.com/wordpress/blueprints/trunk/blueprints/stylish-press/site-content.wxr"
+                "url": "https://github-proxy.com/proxy/?repo=wordpress-juanmaguitar/wporg-developer&branch=trunk&directory=source/wp-content/plugins/wporg-developer-2023/"
+            },
+            "options": {
+                "activate": true
             }
         },
         {
-            "step": "mkdir",
-            "path": "/wordpress/wp-content/themes/stylish-press-theme"
-        },
-        {
-            "step": "writeFile",
-            "path": "/wordpress/wp-content/themes/stylish-press-theme/style.css",
-            "data": {
+            "step": "installTheme",
+            "themeZipFile": {
                 "resource": "url",
-                "url": "https://raw.githubusercontent.com/WordPress/blueprints/stylish-press/blueprints/stylish-press/stylish-press-theme/style.css"
+                "url": "https://github-proxy.com/proxy/?repo=wordpress-juanmaguitar/wporg-developer&branch=trunk&directory=source/wp-content/plugins/wporg-developer-2023/"
+            },
+            "options": {
+                "activate": true
             }
-        },
-        {
-            "step": "writeFile",
-            "path": "/wordpress/wp-content/themes/stylish-press-theme/theme.json",
-            "data": {
-                "resource": "url",
-                "url": "https://raw.githubusercontent.com/wordpress/blueprints/trunk/blueprints/stylish-press/stylish-press-theme/theme.json"
-            }
-        },
-        {
-            "step": "writeFile",
-            "path": "/wordpress/wp-content/themes/stylish-press-theme/functions.php",
-            "data": {
-                "resource": "url",
-                "url": "https://raw.githubusercontent.com/wordpress/blueprints/trunk/blueprints/stylish-press/stylish-press-theme/functions.php"
-            }
-        },
-        {
-            "step": "mkdir",
-            "path": "/wordpress/wp-content/themes/stylish-press-theme/parts"
-        },
-        {
-            "step": "writeFile",
-            "path": "/wordpress/wp-content/themes/stylish-press-theme/parts/header.html",
-            "data": {
-                "resource": "url",
-                "url": "https://raw.githubusercontent.com/wordpress/blueprints/trunk/blueprints/stylish-press/stylish-press-theme/parts/header.html"
-            }
-        },
-        {
-            "step": "activateTheme",
-            "themeFolderName": "stylish-press-theme"
-        },
-        {
-            "step": "login",
-            "username": "admin",
-            "password": "password"
         }
     ]
 }
